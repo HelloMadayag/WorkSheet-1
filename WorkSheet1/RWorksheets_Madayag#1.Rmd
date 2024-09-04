@@ -1,0 +1,272 @@
+---
+title: "WorkSheet#1"
+author: "MJ MADAYAG"
+date: "2024-09-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Worksheet 1
+## no 1
+## a.
+```{r age, echo=FALSE}
+age <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29,
+35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 37, 42, 53, 41,
+51, 35, 24, 33, 41)
+
+length(age)
+
+```
+## b.
+```{r age, echo=FALSE}
+age <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29,
+35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 37, 42, 53, 41,
+51, 35, 24, 33, 41)
+
+length(age)
+
+```
+
+## 2 
+## Find the reciprocal of the value for age.
+
+```{r}
+
+age_reciprocal <- 1/age
+
+print(age_reciprocal)
+
+
+```
+
+
+```{r}
+
+
+## 3. Assign also new_age <- (age,, 0, age).
+  
+new_age <- c(age, 0, age)
+print(new_age)
+## it combined the vector "age" twice and added a 0 in the middle. 
+
+```
+
+
+
+```{r}
+## 4. Sort the values for age
+
+sort(age)
+## it sorted the age value from lowest to highest
+```
+
+```{r}
+
+## 5.Find the minimu and maximum value for age.
+
+min(age)
+max(age)
+
+## it finds out which number is the highest and the lowest within the "age" vector
+
+```
+
+```{r}
+## 6. Set up a vector named data, consisting of 
+## A.
+data <- c(2.4, 2.8, 2.1, 2.5, 2.4, 2.2, 2.5,
+2.3, 2.5, 2.3, 2.4, 2.7)
+length(data)
+```
+
+```{r}
+## B.
+data <- c(2.4, 2.8, 2.1, 2.5, 2.4, 2.2, 2.5,
+2.3, 2.5, 2.3, 2.4, 2.7)
+length(data)
+```
+
+```{r}
+## 7. Generate a new vector for data where  you double every value chuchu
+
+new_vector <- data*2
+print(new_vector)
+
+```
+
+```{r}
+
+## 8. Generate a sequence of the following scenario: 8.1
+
+int1_1to100 <- seq(1,100)
+print(int1_1to100)
+
+```
+
+```{r}
+
+## 8.2
+
+num20to60 <- seq (20,60)
+num20to60
+```
+
+```{r}
+
+## 8.3
+num20_60 <- seq (20,60)
+mean(num20_60)
+
+
+```
+
+```{r}
+
+## 8.4
+numbahs <- seq (51, 91)
+sum(numbahs)
+
+```
+
+```{r}
+
+## 8.5
+## 
+
+int_2 <- seq (1,1000)
+
+print(int_2)
+length (int_2)
+
+```
+
+```{r}
+## 8.5
+## A
+
+N8.1 <- length(int1_1to100)
+N8.2 <- length(num20_60)
+N8.3 <- length(num20to60)
+N8.4 <- length(numbahs)
+
+fin_length <- N8.1 +N8.2+ N8.3 + N8.4
+
+fin_length
+```
+
+```{r}
+## 8.5 B
+
+N8.1 <- length(int1_1to100)
+N8.2 <- length(num20_60)
+N8.3 <- length(num20to60)
+N8.4 <- length(numbahs)
+
+fin_length <- N8.1 + N8.2 + N8.3 + N8.4
+
+fin_length
+```
+
+```{r}
+
+## 8.5 C
+
+new_max <- int_2[1:10]
+new_max
+  
+```
+
+```{r}
+## 9
+Filter(function(i) { all(i %% c(3,5,7) != 0) }, seq(100))
+
+
+## every number divisible by 3,5 and 7 is excluded
+
+```
+
+```{r}
+
+## 10
+
+backwards <- seq (100, 1)
+print(backwards)
+```
+
+```{r}
+
+## 11
+multi <- (1:25)
+multi <- multi [multi %% 3 == 0 | multi %% 5 == 0]
+length(multi)
+multi
+
+```
+
+```{r}
+
+## 11
+## A.
+N10 <- length(backwards)
+N11 <- length(multi)
+final_pts <- N10 + N11
+
+final_pts
+```
+
+```{r}
+## 11
+## B.
+N10 <- length(backwards)
+N11 <- length(multi)
+final_pts <- N10 + N11
+
+final_pts
+```
+
+```{r}
+## 12
+x <- {0 + x + 5 + }
+
+## ERROR occured 
+```
+
+```{r}
+## 13
+score <- c(72, 86, 92, 63, 88, 89, 91, 92, 75,
+75, 77)
+
+print(score[2])
+print(score[3])
+```
+
+```{r}
+## 14 A.
+a <- c(1,2,NA,4,NA,6,7)
+
+print(a,na.print="-999")
+
+
+```
+
+```{r}
+## 14 B.
+a <- c(1,2,NA,4,NA,6,7)
+
+print(a,na.print="-999")
+
+## "na.print" calls to the "NA" within the "a" vector and changed its value
+
+```
+
+```{r}
+## 15
+
+
+name = readline(prompt="Input your name: ")
+age = readline(prompt="Input your age: ")
+print(paste("My name is",name, "and I am",age ,"years old."))
+print(R.version.string)
+```
