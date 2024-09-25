@@ -1,0 +1,258 @@
+---
+title: "RWorksheets_Madayag#2"
+author: "MJ MADAYAG"
+date: "2024-09-25"
+output: pdf_document
+---
+
+## NO. 1
+```{r}
+
+## A.
+## it displayed numbers from -5 to positive 5
+vector_1 <- -5:5
+vector_1
+```
+
+```{r}
+## B.
+x <- 1:7
+x
+```
+
+## NO. 2
+```{r}
+
+vector_2 <- seq(1, 3, by = 0.2)
+vector_2
+##incremented numbers by .2 from 1 till 3
+```
+
+
+## NO. 3
+```{r}
+
+## A. 
+ages <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 
+          35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 
+          50, 37, 46, 25, 17, 37, 43, 53, 41, 51, 
+          35, 24, 33, 41, 53, 40, 18, 44, 38, 41, 
+          48, 27, 39, 19, 30, 61, 54, 58, 26, 18)
+
+third_element <- ages[3]
+third_element
+```
+
+```{r}
+## B.
+second_and_fourth <- ages[c(2, 4)]
+second_and_fourth
+```
+
+```{r}
+## C.
+all_but_4th_and_12th <- ages[-c(4, 12)]
+all_but_4th_and_12th
+```
+## NO. 4
+```{r}
+## A.
+x <- c("first" = 3, "second" = 0, "third" = 9)
+
+selected_elements <- x[c("first", "third")]
+
+selected_elements
+##shows or accessed the first and third element
+```
+
+```{r}
+## B.
+x <- c("first" = 3, "second" = 0, "third" = 9)
+
+selected_elements <- x[c("first", "third")]
+
+selected_elements
+
+##Output
+## first third
+##  3      9
+```
+
+
+## NO. 5
+```{r}
+
+## A.
+x <- -3:2
+
+x[2] <- 0
+
+x
+## the second element in this sequence is changed to  0
+```
+
+```{r}
+##B.
+x <- -3:2
+
+x[2] <- 0
+
+x
+## output: [1] -3 0 -1 0 1 2
+```
+
+## no 6.
+
+```{r}
+## A.
+diesel_fuel <- data.frame(
+Month = c("Jan", "Feb", "March", "Apr", "May", "June"),
+Php = c(52.50, 57.25, 65.00, 60.00, 74.25, 54.00),
+Liters = c(25, 30, 40, 50, 10, 45)
+)
+diesel_fuel
+## B. 
+weighted.mean(diesel_fuel$liter, diesel_fuel$purchase)
+```
+
+## NO. 7
+
+```{r}
+## A. and B. and C.
+rivers
+
+data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers), sd(rivers), min(rivers), max(rivers))
+
+data
+```
+
+
+## NO. 8
+
+```{r}
+## A.
+ power_rank <- c(1:25)
+celeb_name <- c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCatney", "George Lucas", "Elthon John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+pay <- c(67, 90,225,110,90, 332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)
+celeb_data <- data.frame(PowerRanking = power_rank, CelebrityName = celeb_name,Pay = pay)
+celeb_data
+```
+
+```{r}
+## B.
+celeb_data[celeb_data$CelebrityName == "J.K. Rowling", "PowerRanking"] <- 15
+celeb_data[celeb_data$CelebrityName == "J.K. Rowling", "Pay"] <- 90
+
+celeb_data
+```
+
+```{r}
+## C.
+## Create an excel file from the table above and save it
+#as csv file(PowerRanking). Import the csv file into
+#the RStudio. What is the R script?
+write.csv(celeb_data, file = "PowerRanking.csv", row.names = FALSE)
+
+celeb_data_imported <- read.csv("PowerRanking.csv")
+
+celeb_data_imported
+```
+
+```{r}
+## D.
+ranked_subset <- celeb_data[10:20, ]
+save(ranked_subset, file = "Ranks.RData")
+```
+
+## NO. 9
+```{r}
+
+## NO. 9
+
+
+library(readxl)
+# A.
+# Import the Excel file
+hotels_data <- read_excel("hotels-vienna.xlsx")  
+hotels_data
+
+```
+
+```{r}
+# Get the dimensions of the dataset
+# B.
+dimensions <- dim(hotels_data)
+dimensions
+```
+
+
+```{r}
+# C.
+library(dplyr)
+
+# Select specific columns
+selected_data <- hotels_data %>%
+  select(country, neighbourhood, price, stars, accommodation_type, rating)
+
+head(selected_data)
+
+```
+
+```{r}
+## D.
+library(readxl)
+library(dplyr)
+
+hotels_data <- read_excel("hotels-vienna.xlsx")
+colnames(hotels_data)
+selected_columns <- hotels_data %>% select(country, neighbourhood, price, stars, accommodation_type, rating)
+save(selected_columns, file = "new.RData")
+```
+
+```{r}
+## E.
+first_six_rows <- head(selected_columns)
+print(first_six_rows)
+
+last_six_rows <- tail(selected_columns)
+print(last_six_rows)
+
+```
+
+
+## NO 10.
+
+
+```{r}
+## A
+vegetables <- c("Carrot", "Broccoli", "Spinach", "Bell Pepper", 
+                "Cauliflower", "Onion", "Tomato", "Eggplant", 
+                "Green Bean", "Potato")
+vegetables
+```
+```{r}
+## B
+vegetables <- c(vegetables, "Water Spinach", "Squash")
+vegetables
+```
+
+```{r}
+## C.
+vegetables <- append(vegetables, c("Celery", "Pumpkin", "Moringa Oliefera", "Pea"), after = 5)
+vegetables
+
+num_vegetables <- length(vegetables)
+num_vegetables
+```
+
+```{r}
+## D.
+vegetables <- vegetables[-c(5, 10, 15)]
+vegetables
+
+remaining_vegetables <- length(vegetables)
+remaining_vegetables
+
+```
+
+
