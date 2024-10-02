@@ -1,0 +1,167 @@
+---
+title: "RWorksheets_Madayag#3A"
+author: "MJ MADAYAG"
+date: "2024-10-02"
+output: pdf_document
+---
+
+## 1 Vectors
+```{r}
+ 
+## A
+first_11_letters <- LETTERS[1:11]
+
+first_11_letters
+
+```
+
+```{r}
+## B
+odd_letters <- LETTERS[seq(1, length(LETTERS), by = 2)]
+odd_letters
+```
+```{r}
+## C
+ vowels <- LETTERS[c(1, 5, 9, 15, 21)]  
+vowels
+```
+
+```{r}
+## D
+ last_5_lowercase <- letters[22:26]
+last_5_lowercase
+```
+
+```{r}
+## E
+
+letters_15_to_24 <- letters[15:24]
+letters_15_to_24
+```
+
+
+## 2 
+```{r}
+## A
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+```
+
+```{r}
+## B
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+```
+
+```{r}
+## C 
+data <- data.frame(City = city, Temperature = temp)
+data
+```
+
+```{r}
+## D
+names(data) <- c("City", "Temperature")
+data
+```
+
+```{r}
+## E
+str(data)
+```       
+
+```{r}
+## F
+data[3:4, ]
+```
+
+```{r}
+## G
+highest_temp_city <- data[which.max(data$Temperature), ]
+lowest_temp_city <- data[which.min(data$Temperature), ]
+
+highest_temp_city
+lowest_temp_city
+```
+
+## 3 Matrices
+
+```{r}
+## A
+matrix_data <- matrix(c(1:8, 11:14), nrow = 3, ncol = 4)
+matrix_data
+```
+
+```{r}
+## B
+matrix_multiplied <- matrix_data * 2
+matrix_multiplied
+```
+
+```{r}
+## C
+row_2 <- matrix_data[2, ]
+row_2
+```
+
+```{r}
+## D
+
+columns_3_4_row_1_2 <- matrix_data[1:2, 3:4]
+columns_3_4_row_1_2
+
+```
+
+```{r}
+## E
+row_3_columns_2_3 <- matrix_data[3, 2:3]
+row_3_columns_2_3
+```
+
+```{r}
+## F
+column_4 <- matrix_data[, 4]
+column_4
+```
+
+```{r}
+## G
+rownames(matrix_multiplied) <- c("isa", "dalawa", "tatlo")
+colnames(matrix_multiplied) <- c("uno", "dos", "tres", "quatro")
+matrix_multiplied
+
+```
+
+```{r}
+## H
+dim(matrix_data) <- c(6, 2)
+matrix_data
+```
+
+## 4 Arrays
+
+```{r}
+## A
+values <- c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+values_repeated <- rep(values, times = 2)
+
+array_3d <- array(values_repeated, dim = c(2, 4, 3))
+array_3d
+```
+
+```{r}
+## B
+## The array has 3 dimensions
+```
+
+
+```{r}
+## C 
+dimnames(array_3d) <- list(
+  c("a", "b"),          
+  c("A", "B", "C", "D"), 
+  c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array") 
+)
+array_3d
+
+```
