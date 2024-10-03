@@ -1,0 +1,156 @@
+---
+title: "RWorksheets_Madayag#3B"
+author: "MJ MADAYAG"
+date: "2024-10-02"
+output: pdf_document
+---
+ 
+
+
+## 1
+```{r}
+## A
+data <- data.frame(
+  Respondents = 1:20, 
+  Sex = c(2,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,1,2),
+  Fathers_Occupaton = c(1,3,3,3,1,2,3,1,1,1,3,2,1,3,3,1,3,1,2,1),
+  Persons_at_Home = c(5,7,3,8,5,9,6,7,8,4,7,5,4,7,8,8,3,11,7,6), 
+Siblings_at_School = c(6,4,4,1,2,1,5,3,1,2,3,2,5,5,2,1,2,5,3,2),
+Types_of_Houses =c(1,2,3,1,1,3,3,1,2,3,2,3,2,2,3,3,3,3,3,2)
+)
+data
+```
+
+```{r}
+## B
+str(data)
+summary(data)
+```
+
+```{r}
+## C 
+mean_for_siblings <- mean(data$Siblings_at_School)
+mean_for_siblings
+```
+
+```{r}
+#D
+subset_data <- subset(data, Respondents <= 2)
+
+subset_data
+```
+
+```{r}
+## E
+subset_rows_e <- data[c(3, 5), c(2, 4)]
+subset_rows_e
+
+
+```
+
+```{r}
+## F
+
+types_houses <- data$Types_of_Houses
+types_houses
+
+
+```
+
+```{r}
+## G
+males_farmers <- data[data$Sex == 1 & data$Fathers_Occupaton,]
+males_farmers
+
+
+```
+
+```{r}
+## H
+female_siblings <- data[data$Sex == 2 & data$Siblings_at_School >= 5,]
+
+female_siblings
+```
+
+## 2
+```{r}
+df = data.frame(Ints=integer(),
+
+Doubles=double(), Characters=character(),
+Logicals=logical(),
+Factors=factor(),
+stringsAsFactors=FALSE)
+
+print("Structure of the empty dataframe:")
+print(str(df))
+
+```
+
+```{r}
+##A. The data described an empty data frame with 0 obs of 5 variables while maintaining the data types.
+```
+
+## 3. 
+```{r}
+## A. 
+
+HouseHData <- read.csv("HouseholdData.csv")
+HouseHData
+```
+
+
+```{r}
+## B.
+
+HouseHData$Sex <- factor(HouseHData$Sex, levels = c("Male","Female"), labels = c(1,2))
+
+HouseHData$Sex <-as.integer(HouseHData$Sex)
+
+HouseHData
+
+```
+
+
+```{r}
+##  C.
+
+HouseHData$Types_of_Houses <- factor(HouseHData$Types_of_Houses, levels = c("Wood", "Congrete", "Semi-Congrete"), labels = c(1,2,3))
+
+HouseHData$Types_of_Houses <- as.integer(HouseHData$Types_of_Houses)
+
+HouseHData
+```
+
+
+```{r}
+## D.
+
+HouseHData$Fathers_Occupatio <- factor(HouseHData$Fathers_Occupation, levels = c(1, 2, 3), labels = c("Farmer", "Driver", "Others"))
+
+HouseHData
+```
+
+
+```{r} 
+## E.
+femaleDriverFather <- HouseHData[HouseHData$Sex == 2 & HouseHData$Fathers_Occupation == 2,]
+
+femaleDriverFather
+```
+
+
+```{r}
+## F.
+
+householdFemaleAndFather <- HouseHData[HouseHData$Siblings_at_School >= 5,]
+
+householdFemaleAndFather
+```
+
+
+## 4
+```{r}
+## The graph shows the distribution of tweet sentiments (Negative, Neutral, and Positive) over a specific period from July 14 to July 21, 2020.Negative tweets consistently dominate over Neutral and Positive tweets across all days, indicating a generally negative sentiment during this period. This shows that Twitter is full of negativity. 
+
+```
+
